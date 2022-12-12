@@ -1,8 +1,0 @@
-#!/usr/bin/expect -f
-spawn ./git_part1.sh
-expect "Username for 'https://github.com':\r"
-send -- "a-s-t-e-y-a\r"
-expect "Password for 'https://a-s-t-e-y-a@github.com':\r"
-send -- "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\r"
-expect eof
-
