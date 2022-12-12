@@ -45,7 +45,7 @@ if {$force_conservative} {
 set timeout -1
 spawn ./git_part1.sh
 match_max 100000
-expect -exact "*"
+expect "*Username for 'https://github.com':*"
 send -- "a-s-t-e-y-a\r"
 expect -exact "a-s-t-e-y-a\r
 Password for 'https://a-s-t-e-y-a@github.com': "
