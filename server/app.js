@@ -14,11 +14,17 @@ app.use(
     origin: "http://localhost:3000",
   })
 );
+// requiring new routes here
+
+const query_route = require("./src/query_section/query_route.js");
 
 // allow middleware
 
 app.use(parse.json());
 app.use(express.json());
+// setupping middleware for the routes here
+
+app.use(query_route);
 
 //exporting the app module
 
