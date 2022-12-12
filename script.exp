@@ -45,14 +45,7 @@ if {$force_conservative} {
 set timeout -1
 spawn ./git_part1.sh
 match_max 100000
-expect -exact "enter your message"
-send -- "bash\r"
-expect -exact "bash\r
-On branch main\r
-Your branch is ahead of 'origin/main' by 1 commit.\r
-  (use \"git push\" to publish your local commits)\r
-\r
-nothing to commit, working tree clean\r
+expect -exact "*\r
 Username for 'https://github.com': "
 send -- "a-s-t-e-y-a\r"
 expect -exact "a-s-t-e-y-a\r
