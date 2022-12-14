@@ -45,13 +45,7 @@ if {$force_conservative} {
 set timeout -1
 spawn ./git_part1.sh
 match_max 100000
-expect -exact "enter your message:-  "
-send -- "bash\r"
-expect -exact "bash\r
-\[main 8c6cb80\] bash\r
- 2 files changed, 1 insertion(+), 53 deletions(-)\r
- rewrite script.exp (100%)\r
-Username for 'https://github.com': "
+expect -exact "*Username for 'https://github.com': "
 send -- "a-s-t-e-y-a\r"
 expect -exact "a-s-t-e-y-a\r
 Password for 'https://a-s-t-e-y-a@github.com': "
