@@ -1,0 +1,18 @@
+1.)user signup route -service :-{post}
+2.)login route -:{services -post }
+3.)jwt authentication -:{services included with login route}
+4.)query section (post , get , get by id ,)
+
+///
+ blogs section 
+////
+
+1.) blog (post , update , delete , get route , get route id )
+2.) comments (post , update ,get by id, delete )
+3.) reply (post , update , get by id )
+
+///
+potfolio
+///
+
+1.) portfolio (post , update , delete , get , get by id )

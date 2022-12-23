@@ -14,8 +14,15 @@ model User {
     id String @id @default(auto()) @map("_id") @db.ObjectId
     email String @unique
     name String
-    query String
+    password String
     date String
-    phoneno Int?
+    verify Boolean @default(false)
 
   }
+ model Otp {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  otp String
+  date String
+  user_email String 
+  expirydate Int
+ }

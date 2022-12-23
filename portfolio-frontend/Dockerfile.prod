@@ -1,0 +1,10 @@
+# docker file for next js in production 
+# base image 
+
+FROM node:alpine
+RUN mkdir -p /usr/src/
+WORKDIR /usr/src/
+RUN yarn install
+RUN npm run build
+EXPOSE 3000
+CMD npm run start

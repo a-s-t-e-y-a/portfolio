@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR /portfolio-server
+COPY package.json yarn.lock  ./
+RUN yarn install --frozen-lockfile
+COPY . .
+EXPOSE 4000
+CMD ["npm", "run","start"]

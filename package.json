@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/a-s-t-e-y-a/portfolio/issues"
   },
-  "homepage": "https://github.com/a-s-t-e-y-a/portfolio#readme"
+  "homepage": "https://github.com/a-s-t-e-y-a/portfolio#readme",
+  "dependencies": {
+    "eslint": "^8.30.0"
+  }
 }

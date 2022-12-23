@@ -1,0 +1,30 @@
+version: '3'
+services:
+  front:
+    build:
+      context: './portfolio-frontend'
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    container_name: portfolio-frontend
+    networks:
+      - mern-stack-network
+    volumes:
+      - ./portfolio-frontend:/portfolio-frontend
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: './server'
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8000:8000
+    container_name: portfolio-server
+    networks:
+      - mern-stack-network
+    volumes:
+      - ./server:/portfolio-server
+networks:
+  mern-stack-network:
+
+    
