@@ -17,7 +17,7 @@ async function verifyOtpSignup(email, otp_id, otp) {
     if (user) {
       if (otp_user) {
         if (user.verify == false) {
-          if (otp_user.otp === otp) {
+          if (otp_user.otp === otp && otp.expirydate<Date.now()) {
             return true;
           } else {
             return false;
