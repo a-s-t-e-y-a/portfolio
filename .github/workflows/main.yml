@@ -1,4 +1,4 @@
-name: Deploying
+name: portfolio-server-install
 
 on:
   push:
@@ -17,4 +17,9 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
-          script: sh deploy.sh
+          script: |
+               cd ~/portfolio
+               git pull origin main
+               cd server/
+               yarn
+               pm2 start server.js
