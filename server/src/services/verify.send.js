@@ -20,7 +20,7 @@ async function verifyOtpSignup(email, otp_id, otp) {
           if (otp_user.otp === otp && otp.expirydate<Date.now()) {
             return true;
           } else {
-            return 'otp expired';
+            return 'otp get expired';
           }
         } else {
           return false;
