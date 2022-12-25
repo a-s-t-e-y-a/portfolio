@@ -12,8 +12,6 @@ import Queries from "./components/Queries";
 export default function App() {
   return (
     <main>
-    
-      
       <Navbar />
       <About />
       <Projects />

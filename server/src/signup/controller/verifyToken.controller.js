@@ -26,13 +26,9 @@ async function VerifyOtp(req, res) {
     res
       .status(400)
       .json(wrapper.failured("otp get expired regenearte the otp"));
-  } else if(result == 'otp is wrong') 
-  {
-    res
-      .status(400)
-      .json(wrapper.failured("otp is wrong"));
-  }
-  else {
+  } else if (result == "otp is wrong") {
+    res.status(400).json(wrapper.failured("otp is wrong"));
+  } else {
     res.status(500).json(wrapper.failured("otp id dont matched"));
   }
 }
