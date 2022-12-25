@@ -22,4 +22,5 @@ jobs:
                git pull origin main
                cd server/
                yarn
-               pm2 start server.js -f
+               pm2 delete 0
+               pm2 start server.js
