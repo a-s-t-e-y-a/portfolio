@@ -6,7 +6,6 @@ const Prisma = new PrismaClient();
 async function VerifyOtp(req, res) {
   const { email, otp_id, otp } = req.body;
   const result = await verifyOtpSignup(email, otp_id, otp);
-  console.log(result);
   if (result == true) {
     try {
       await Prisma.user.update({
@@ -17,11 +16,10 @@ async function VerifyOtp(req, res) {
           verify: true,
         },
       });
+      res.status(200).json(wrapper.ok("user get verified"));
     } catch (err) {
       if (err) {
         res.status(400).json(wrapper.ok("some error ocurred"));
-      } else {
-        res.status(200).json(wrapper.ok("user get verified"));
       }
     }
   } else if (result == "otp get expired") {

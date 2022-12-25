@@ -58,7 +58,7 @@ async function signupController(req, res) {
               const otp_data = await otpGenerate(data);
               if (otp_data) {
                 res.send({
-                  email: data.email,
+                  data:data,
                   otp: otp_data.id,
                 });
               } else {

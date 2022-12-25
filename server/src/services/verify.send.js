@@ -13,11 +13,12 @@ async function verifyOtpSignup(email, otp_id, otp) {
         id: otp_id,
       },
     });
-
+    console.log(user,otp_user)
     if (user) {
       if (otp_user) {
         if (user.verify == false) {
-          if (otp_user.otp === otp && otp.expirydate<Date.now()) {
+          if (otp_user.otp === otp && otp_user.expirydate > Date.now()) {
+            console.log('sdfdfd')
             return true;
           } else {
             return 'otp get expired';

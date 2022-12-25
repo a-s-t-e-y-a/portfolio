@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 /// otp
 
-console.log("fdsf");
+
 const sendmail = (otp, email) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",

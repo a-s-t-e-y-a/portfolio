@@ -17,6 +17,6 @@ const otp = otpGenerator.generate(6, {
       expirydate :Date.now()+300000
     },
   });
-  return (otp)
+  return (data_)
 }
 module.exports = otpGenerate
