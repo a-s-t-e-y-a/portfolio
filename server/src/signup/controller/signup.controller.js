@@ -23,7 +23,8 @@ async function signupController(req, res) {
     },
   });
   if (data) {
-    if (data.verify == false) {   /// if user otp didnt get verified
+    if (data.verify == false) {
+      /// if user otp didnt get verified
       const otp_data = await otpGenerate(data);
       if (otp_data) {
         res.send({
@@ -58,7 +59,7 @@ async function signupController(req, res) {
               const otp_data = await otpGenerate(data);
               if (otp_data) {
                 res.send({
-                  data:data,
+                  data: data.email,
                   otp: otp_data.id,
                 });
               } else {

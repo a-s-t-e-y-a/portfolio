@@ -5,7 +5,7 @@ async function Regenerate(req,res){
     const {data} = req.body;
     const otp_data = await otpGenerate(data);
     if(otp_data){
-        res.status(400).json(wrapper.ok(otp_data,data))
+        res.status(400).json(wrapper.ok(otp_data.id,data.email))
     }
 }
 module.exports={Regenerate}
