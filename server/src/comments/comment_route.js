@@ -16,6 +16,6 @@ commentRoute.get("/comment/:id", commentControllerGetId);
 // delete the comment
 commentRoute.post("/comment/:id", commentControllerDelete);
 /// update the particular comment
-commentRoute.post("/comment/:id", commentControllerUpdate);
+commentRoute.patch("/comment/:id", commentControllerUpdate);
 
 module.exports = commentRoute;
